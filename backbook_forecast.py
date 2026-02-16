@@ -3705,6 +3705,57 @@ def generate_comprehensive_transparency_report(
     combined_df = combined_df.sort_values(['Segment', 'Cohort', 'Month']).reset_index(drop=True)
 
     # ==========================================================================
+    # Prepare Curve Comparison (actual historical rates vs forecast-applied rates)
+    # ==========================================================================
+    flow_metrics = ['Coll_Principal', 'Coll_Interest', 'InterestRevenue']
+    curve_rows = []
+
+    for metric in flow_metrics:
+        rate_col = f'{metric}_Rate'
+        approach_col = f'{metric}_Approach'
+
+        if rate_col not in historical_curves.columns or rate_col not in rate_lookup.columns:
+            continue
+
+        actual_slice = historical_curves[['Segment', 'Cohort', 'MOB', rate_col]].copy()
+        actual_slice.rename(columns={rate_col: 'Actual_Historical_Rate'}, inplace=True)
+
+        forecast_cols = ['Segment', 'Cohort', 'MOB', rate_col]
+        if approach_col in rate_lookup.columns:
+            forecast_cols.append(approach_col)
+        forecast_slice = rate_lookup[forecast_cols].copy()
+        forecast_slice.rename(columns={rate_col: 'Forecast_Applied_Rate'}, inplace=True)
+        if approach_col in forecast_slice.columns:
+            forecast_slice.rename(columns={approach_col: 'Forecast_Approach'}, inplace=True)
+        else:
+            forecast_slice['Forecast_Approach'] = ''
+
+        merged = pd.merge(
+            actual_slice,
+            forecast_slice,
+            on=['Segment', 'Cohort', 'MOB'],
+            how='outer'
+        )
+        merged['Metric'] = metric
+        merged['Rate_Delta_Forecast_minus_Actual'] = (
+            merged['Forecast_Applied_Rate'] - merged['Actual_Historical_Rate']
+        )
+        curve_rows.append(merged)
+
+    if curve_rows:
+        curve_comparison = pd.concat(curve_rows, ignore_index=True)
+        curve_comparison = curve_comparison[
+            ['Segment', 'Cohort', 'Metric', 'MOB',
+             'Actual_Historical_Rate', 'Forecast_Applied_Rate',
+             'Rate_Delta_Forecast_minus_Actual', 'Forecast_Approach']
+        ]
+        curve_comparison = curve_comparison.sort_values(
+            ['Segment', 'Cohort', 'Metric', 'MOB']
+        ).reset_index(drop=True)
+    else:
+        curve_comparison = pd.DataFrame()
+
+    # ==========================================================================
     # Prepare Seasonal Factors
     # ==========================================================================
     seasonal_factors_df = pd.DataFrame()
@@ -3781,6 +3832,10 @@ def generate_comprehensive_transparency_report(
             sheet_names.append('15_ExContra_Actuals')
             descriptions.append('Ex-contra actuals roll-forward: GBV series excluding contra settlements, with derived provision and NBV')
             use_for.append('Like-for-like comparison basis vs forecast (which also excludes contra). Includes contra effect sanity check.')
+        if len(curve_comparison) > 0:
+            sheet_names.append('16_Curve_Comparison')
+            descriptions.append('Side-by-side historical actual rates vs forecast-applied rates by Segment x Cohort x MOB for key flow metrics')
+            use_for.append('Curve QC: compare historical level/shape to forecasted curve shape by cohort')
         readme_data = {
             'Sheet Name': sheet_names,
             'Description': descriptions,
@@ -3814,6 +3869,9 @@ def generate_comprehensive_transparency_report(
         if ex_contra_actuals is not None and len(ex_contra_actuals) > 0:
             ex_contra_actuals.to_excel(writer, sheet_name='15_ExContra_Actuals', index=False)
 
+        if len(curve_comparison) > 0:
+            curve_comparison.to_excel(writer, sheet_name='16_Curve_Comparison', index=False)
+
     logger.info(f"Comprehensive report saved to: {output_path}")
 
     print("\n" + "=" * 70)
@@ -3841,6 +3899,8 @@ def generate_comprehensive_transparency_report(
         print("    - 14_Backtest_Comparison: Forecast vs actuals by Segment x Cohort x Month")
     if ex_contra_actuals is not None and len(ex_contra_actuals) > 0:
         print("    - 15_ExContra_Actuals: Ex-contra actuals roll-forward (GBV, provision, NBV)")
+    if len(curve_comparison) > 0:
+        print("    - 16_Curve_Comparison: Actual historical rates vs forecast-applied rates by cohort/MOB")
 
     return output_path
 
