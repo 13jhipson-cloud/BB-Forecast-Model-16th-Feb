@@ -1,0 +1,4 @@
+Segment,Cohort,Metric,MOB_Start,MOB_End,Approach,Param1,Param2,Explanation
+NON PRIME,202507,Coll_Principal,1,12,ScaledCohortAvg,12,0.8350,Top-1 Oct-Nov variance fix (Actual/Forecast ratio)
+NON PRIME,202509,Coll_Principal,1,12,ScaledCohortAvg,12,0.8034,Top-2 Oct-Nov variance fix (Actual/Forecast ratio)
+NRP-M,202101,Coll_Principal,37,999,ScaledCohortAvg,12,0.6356,Top-3 Oct-Nov variance fix (Actual/Forecast ratio)

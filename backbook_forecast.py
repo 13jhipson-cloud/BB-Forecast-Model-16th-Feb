@@ -81,7 +81,8 @@ class Config:
     # Valid rate calculation approaches
     VALID_APPROACHES: List[str] = [
         'CohortAvg', 'CohortTrend', 'DonorCohort', 'ScaledDonor',
-        'SegMedian', 'Manual', 'Zero', 'ScaledCohortAvg'
+        'SegMedian', 'Manual', 'Zero', 'ScaledCohortAvg',
+        'StaticCohortAvg'
     ]
 
     # Seasonality configuration
@@ -1555,6 +1556,71 @@ def fn_cohort_avg(curves_df: pd.DataFrame, segment: str, cohort: str,
     return float(rate)
 
 
+def fn_static_cohort_avg(curves_df: pd.DataFrame, segment: str, cohort: str,
+                         mob: int, metric_col: str, lookback: int = 6,
+                         exclude_zeros: bool = False) -> Optional[float]:
+    """
+    Calculate average rate from historical ACTUAL curve points only.
+
+    Unlike fn_cohort_avg (which can include previously forecasted values in
+    rolling mode), this function excludes rows marked as forecast-generated
+    (`__is_forecast` == True). This helps prevent forecast compounding drift.
+
+    Args:
+        curves_df: Curves DataFrame (may include forecast-augmented rows)
+        segment: Target segment
+        cohort: Target cohort
+        mob: Target MOB (the MOB being forecast)
+        metric_col: Column name for metric rate
+        lookback: Number of periods to look back
+        exclude_zeros: If True, only average non-zero rates
+
+    Returns:
+        float or None: Average rate
+    """
+    cohort_str = clean_cohort(cohort)
+
+    if mob <= Config.MOB_THRESHOLD + 1:
+        min_mob_filter = 1
+    else:
+        min_mob_filter = Config.MOB_THRESHOLD
+
+    mask = (
+        (curves_df['Segment'] == segment) &
+        (curves_df['Cohort'] == cohort_str) &
+        (curves_df['MOB'] >= min_mob_filter) &
+        (curves_df['MOB'] < mob)
+    )
+
+    # Exclude forecast-generated rows when marker is available
+    if '__is_forecast' in curves_df.columns:
+        mask = mask & (curves_df['__is_forecast'] != True)
+
+    data = curves_df[mask].sort_values('MOB', ascending=False)
+
+    min_data_points = 1 if mob <= Config.MOB_THRESHOLD + 1 else 2
+    if len(data) < min_data_points:
+        return None
+
+    if metric_col not in data.columns:
+        return None
+
+    if exclude_zeros:
+        non_zero_data = data[data[metric_col] > 0]
+        if len(non_zero_data) == 0:
+            return None
+        non_zero_data = non_zero_data.head(lookback)
+        rate = non_zero_data[metric_col].mean()
+    else:
+        data = data.head(lookback)
+        rate = data[metric_col].mean()
+
+    if pd.isna(rate):
+        return None
+
+    return float(rate)
+
+
 def fn_cohort_trend(curves_df: pd.DataFrame, segment: str, cohort: str,
                     mob: int, metric_col: str) -> Optional[float]:
     """
@@ -2034,6 +2100,22 @@ def apply_approach(curves_df: pd.DataFrame, segment: str, cohort: str,
         else:
             return {'Rate': 0.0, 'ApproachTag': 'ScaledCohortAvg_NoData_ERROR'}
 
+    elif approach == 'StaticCohortAvg':
+        # StaticCohortAvg: Cohort average using historical ACTUAL rates only
+        # Param1 = lookback periods (default LOOKBACK_PERIODS)
+        try:
+            lookback = int(float(param1)) if param1 and param1 != 'None' else Config.LOOKBACK_PERIODS
+        except (ValueError, TypeError):
+            lookback = Config.LOOKBACK_PERIODS
+
+        exclude_zeros = metric in ['WO_DebtSold', 'Debt_Sale_Coverage_Ratio', 'Debt_Sale_Proceeds_Rate']
+        rate = fn_static_cohort_avg(curves_df, segment, cohort, mob, metric_col, lookback, exclude_zeros)
+
+        if rate is not None:
+            return {'Rate': rate, 'ApproachTag': f'StaticCohortAvg({lookback})'}
+        else:
+            return {'Rate': 0.0, 'ApproachTag': 'StaticCohortAvg_NoData_ERROR'}
+
     else:
         return {'Rate': 0.0, 'ApproachTag': f'UnknownApproach_ERROR:{approach}'}
 
@@ -2098,6 +2180,8 @@ def build_rate_lookup(seed: pd.DataFrame, curves: pd.DataFrame,
 
     # Create a working copy of curves that we'll update with forecasted rates
     working_curves = curves.copy()
+    if '__is_forecast' not in working_curves.columns:
+        working_curves['__is_forecast'] = False
 
     lookups = []
 
@@ -2145,6 +2229,7 @@ def build_rate_lookup(seed: pd.DataFrame, curves: pd.DataFrame,
                 'Segment': segment,
                 'Cohort': cohort,
                 'MOB': mob,
+                '__is_forecast': True,
                 **forecast_rates
             })
 

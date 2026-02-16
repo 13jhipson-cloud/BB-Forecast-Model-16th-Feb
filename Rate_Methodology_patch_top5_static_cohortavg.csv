@@ -1,0 +1,6 @@
+Segment,Cohort,Metric,MOB_Start,MOB_End,Approach,Param1,Param2,Explanation
+NON PRIME,202507,Coll_Principal,1,12,StaticCohortAvg,2,,Use last 2 actual cohort points only (no forecast compounding)
+NON PRIME,202509,Coll_Principal,1,12,StaticCohortAvg,2,,Use last 2 actual cohort points only (no forecast compounding)
+NRP-M,202101,Coll_Principal,37,999,StaticCohortAvg,3,,Stabilise mature cohort using recent actual-only average
+PRIME,202101,Coll_Principal,37,999,StaticCohortAvg,3,,Stabilise mature cohort using recent actual-only average
+NRP-M,202301,Coll_Principal,13,36,StaticCohortAvg,3,,Mid-life stabiliser using actual-only cohort history
