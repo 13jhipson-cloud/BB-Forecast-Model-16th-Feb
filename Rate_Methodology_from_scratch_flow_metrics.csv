@@ -1,0 +1,856 @@
+Segment,Cohort,Metric,MOB_Start,MOB_End,Approach,Param1,Param2,Explanation
+NON PRIME,201912,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,201912,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,201912,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,201912,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,201912,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,201912,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,201912,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,201912,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,201912,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202001,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202001,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202001,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202001,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202001,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202001,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202001,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202001,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202001,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202101,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202101,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202101,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202101,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202101,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202101,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202101,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202101,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202101,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202201,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202201,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202201,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202201,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202201,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202201,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202201,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202201,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202201,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202301,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202301,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202301,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202301,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202301,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202301,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202301,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202301,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202301,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202404,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202404,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202404,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202404,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202404,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202404,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202404,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202404,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202404,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202405,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202405,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202405,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202405,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202405,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202405,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202405,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202405,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202405,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202406,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202406,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202406,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202406,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202406,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202406,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202406,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202406,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202406,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202407,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202407,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202407,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202407,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202407,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202407,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202407,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202407,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202407,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202408,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202408,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202408,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202408,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202408,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202408,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202408,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202408,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202408,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202409,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202409,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202409,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202409,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202409,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202409,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202409,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202409,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202409,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202410,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202410,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202410,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202410,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202410,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202410,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202410,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202410,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202410,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202411,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202411,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202411,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202411,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202411,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202411,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202411,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202411,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202411,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202412,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202412,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202412,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202412,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202412,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202412,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202412,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202412,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202412,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202501,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202501,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202501,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202501,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202501,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202501,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202501,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202501,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202501,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202502,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202502,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202502,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202502,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202502,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202502,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202502,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202502,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202502,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202503,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202503,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202503,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202503,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202503,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202503,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202503,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202503,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202503,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202504,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202504,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202504,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202504,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202504,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202504,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202504,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202504,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202504,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202505,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202505,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202505,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202505,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202505,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202505,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202505,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202505,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202505,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202506,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202506,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202506,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202506,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202506,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202506,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202506,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202506,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202506,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202507,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202507,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202507,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202507,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202507,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202507,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202507,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NON PRIME,202507,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NON PRIME,202507,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NON PRIME,202508,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NON PRIME,202508,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NON PRIME,202508,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NON PRIME,202508,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NON PRIME,202508,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NON PRIME,202508,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NON PRIME,202508,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NON PRIME,202508,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NON PRIME,202508,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NON PRIME,202509,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NON PRIME,202509,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NON PRIME,202509,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NON PRIME,202509,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NON PRIME,202509,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NON PRIME,202509,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NON PRIME,202509,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NON PRIME,202509,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NON PRIME,202509,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-L,202301,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202301,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202301,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202301,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202301,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202301,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202301,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202301,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202301,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202404,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202404,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202404,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202404,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202404,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202404,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202404,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202404,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202404,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202405,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202405,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202405,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202405,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202405,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202405,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202405,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202405,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202405,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202406,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202406,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202406,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202406,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202406,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202406,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202406,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202406,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202406,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202407,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202407,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202407,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202407,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202407,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202407,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202407,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202407,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202407,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202408,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202408,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202408,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202408,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202408,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202408,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202408,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202408,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202408,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202409,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202409,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202409,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202409,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202409,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202409,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202409,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202409,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202409,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202410,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202410,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202410,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202410,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202410,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202410,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202410,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202410,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202410,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202411,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202411,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202411,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202411,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202411,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202411,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202411,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202411,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202411,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202412,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202412,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202412,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202412,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202412,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202412,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202412,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202412,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202412,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202501,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202501,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202501,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202501,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202501,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202501,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202501,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202501,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202501,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202502,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202502,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202502,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202502,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202502,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202502,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202502,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202502,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202502,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202503,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202503,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202503,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202503,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202503,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202503,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202503,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202503,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202503,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202504,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202504,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202504,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202504,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202504,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202504,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202504,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202504,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202504,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202505,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202505,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202505,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202505,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202505,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202505,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202505,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202505,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202505,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202506,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202506,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202506,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202506,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202506,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202506,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202506,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202506,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202506,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202507,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202507,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202507,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202507,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202507,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202507,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202507,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-L,202507,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-L,202507,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-L,202508,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-L,202508,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-L,202508,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-L,202508,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-L,202508,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-L,202508,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-L,202508,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-L,202508,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-L,202508,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-L,202509,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-L,202509,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-L,202509,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-L,202509,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-L,202509,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-L,202509,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-L,202509,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-L,202509,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-L,202509,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-M,202101,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202101,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202101,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202101,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202101,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202101,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202101,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202101,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202101,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202201,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202201,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202201,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202201,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202201,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202201,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202201,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202201,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202201,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202301,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202301,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202301,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202301,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202301,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202301,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202301,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202301,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202301,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202404,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202404,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202404,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202404,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202404,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202404,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202404,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202404,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202404,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202405,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202405,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202405,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202405,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202405,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202405,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202405,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202405,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202405,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202406,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202406,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202406,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202406,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202406,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202406,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202406,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202406,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202406,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202407,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202407,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202407,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202407,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202407,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202407,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202407,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202407,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202407,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202408,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202408,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202408,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202408,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202408,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202408,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202408,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202408,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202408,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202409,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202409,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202409,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202409,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202409,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202409,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202409,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202409,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202409,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202410,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202410,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202410,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202410,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202410,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202410,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202410,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202410,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202410,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202411,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202411,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202411,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202411,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202411,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202411,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202411,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202411,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202411,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202412,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202412,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202412,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202412,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202412,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202412,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202412,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202412,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202412,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202501,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202501,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202501,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202501,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202501,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202501,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202501,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202501,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202501,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202502,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202502,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202502,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202502,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202502,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202502,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202502,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202502,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202502,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202503,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202503,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202503,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202503,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202503,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202503,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202503,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202503,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202503,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202504,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202504,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202504,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202504,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202504,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202504,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202504,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202504,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202504,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202505,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202505,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202505,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202505,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202505,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202505,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202505,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202505,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202505,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202506,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202506,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202506,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202506,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202506,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202506,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202506,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202506,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202506,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202507,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202507,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202507,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202507,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202507,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202507,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202507,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-M,202507,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-M,202507,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-M,202508,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-M,202508,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-M,202508,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-M,202508,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-M,202508,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-M,202508,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-M,202508,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-M,202508,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-M,202508,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-M,202509,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-M,202509,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-M,202509,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-M,202509,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-M,202509,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-M,202509,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-M,202509,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-M,202509,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-M,202509,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-S,201912,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,201912,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,201912,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,201912,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,201912,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,201912,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,201912,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,201912,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,201912,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202001,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202001,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202001,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202001,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202001,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202001,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202001,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202001,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202001,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202101,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202101,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202101,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202101,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202101,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202101,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202101,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202101,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202101,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202201,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202201,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202201,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202201,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202201,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202201,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202201,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202201,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202201,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202301,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202301,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202301,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202301,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202301,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202301,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202301,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202301,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202301,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202404,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202404,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202404,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202404,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202404,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202404,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202404,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202404,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202404,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202405,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202405,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202405,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202405,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202405,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202405,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202405,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202405,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202405,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202406,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202406,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202406,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202406,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202406,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202406,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202406,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202406,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202406,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202407,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202407,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202407,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202407,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202407,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202407,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202407,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202407,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202407,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202408,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202408,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202408,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202408,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202408,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202408,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202408,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202408,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202408,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202409,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202409,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202409,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202409,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202409,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202409,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202409,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202409,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202409,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202410,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202410,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202410,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202410,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202410,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202410,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202410,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202410,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202410,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202411,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202411,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202411,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202411,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202411,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202411,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202411,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202411,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202411,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202412,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202412,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202412,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202412,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202412,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202412,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202412,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202412,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202412,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202501,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202501,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202501,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202501,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202501,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202501,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202501,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202501,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202501,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202502,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202502,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202502,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202502,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202502,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202502,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202502,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202502,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202502,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202503,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202503,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202503,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202503,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202503,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202503,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202503,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202503,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202503,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202504,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202504,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202504,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202504,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202504,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202504,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202504,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202504,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202504,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202505,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202505,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202505,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202505,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202505,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202505,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202505,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202505,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202505,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202506,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202506,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202506,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202506,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202506,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202506,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202506,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202506,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202506,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202507,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202507,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202507,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202507,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202507,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202507,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202507,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+NRP-S,202507,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+NRP-S,202507,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+NRP-S,202508,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-S,202508,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-S,202508,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-S,202508,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-S,202508,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-S,202508,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-S,202508,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-S,202508,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-S,202508,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-S,202509,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-S,202509,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-S,202509,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-S,202509,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-S,202509,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-S,202509,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+NRP-S,202509,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+NRP-S,202509,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+NRP-S,202509,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+PRIME,202101,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202101,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202101,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202101,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202101,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202101,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202101,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202101,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202101,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202201,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202201,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202201,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202201,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202201,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202201,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202201,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202201,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202201,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202405,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202405,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202405,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202405,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202405,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202405,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202405,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202405,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202405,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202407,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202407,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202407,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202407,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202407,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202407,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202407,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202407,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202407,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202409,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202409,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202409,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202409,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202409,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202409,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202409,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202409,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202409,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202504,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202504,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202504,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202504,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202504,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202504,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202504,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202504,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202504,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202507,Coll_Principal,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202507,Coll_Principal,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202507,Coll_Principal,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202507,Coll_Interest,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202507,Coll_Interest,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202507,Coll_Interest,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202507,InterestRevenue,1,12,StaticCohortAvg,3,,Early regime using recent actual-only cohort points
+PRIME,202507,InterestRevenue,13,36,StaticCohortAvg,6,,Mid regime using actual-only cohort points
+PRIME,202507,InterestRevenue,37,999,StaticCohortAvg,12,,Late regime tail cap using actual-only cohort points
+PRIME,202508,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+PRIME,202508,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+PRIME,202508,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+PRIME,202508,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+PRIME,202508,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+PRIME,202508,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+PRIME,202508,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+PRIME,202508,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+PRIME,202508,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+PRIME,202509,Coll_Principal,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+PRIME,202509,Coll_Principal,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+PRIME,202509,Coll_Principal,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+PRIME,202509,Coll_Interest,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+PRIME,202509,Coll_Interest,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+PRIME,202509,Coll_Interest,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
+PRIME,202509,InterestRevenue,1,6,DonorCohort,202507,,Recent cohort bridge via same-segment donor 202507
+PRIME,202509,InterestRevenue,7,24,StaticCohortAvg,3,,Post-bridge stabilisation using actual-only history
+PRIME,202509,InterestRevenue,25,999,StaticCohortAvg,6,,Mature stabilisation using actual-only history
