@@ -1,0 +1,120 @@
+You are helping me iterate a Backbook (BB) forecast model using ONLY the attached Handover Doc for context (do not assume anything else). Our objective is to reduce forecast vs actual variances (ex-contra basis) across all segments/cohorts/metrics by adjusting Rate_Methodology.csv with regime-based, sensible rules (no single-month patches). Start by focusing on principal collections variance: identify the biggest segment/cohort drivers across Oct-25 to Jan-26 and propose the minimum set of regime-based methodology changes (with donors/MOB ranges) to reduce over-collection. If any items are marked “UNKNOWN” in the Handover Doc, list 3–5 clarifying questions first; otherwise propose the first 5 concrete actions.
+
+Handover Doc
+
+One-paragraph TL;DR
+We are iterating a Backbook (BB) forecast model (loans originated ≤ 202509) to reduce forecast vs actual variances using sensible, regime-based methodology rules (no month-by-month patching). The model now supports ex-contra actuals to compare stock metrics (GBV, Provision Balance) on a like-for-like basis with the forecast bridge (which excludes contra). Current focus is to reduce remaining variances across all segments/cohorts/metrics (Oct-25 to Jan-26 backtest), starting with large drivers like principal collections over-collection and coverage ratio/provisions dynamics, while maintaining plausible long-horizon curves.
+Current Objective
+Primary goal: Improve BB forecast accuracy vs BB actuals (ex-contra basis) by adjusting Rate_Methodology.csv using regime-based approach changes (DonorCohort / ScaledDonor / CohortAvg / SegMedian, with continuity and tail caps).
+Definition of “done” / success criteria: UNKNOWN. Needs agreement on acceptable tolerance by metric (e.g., provisions variance, collections variance) across Oct-25 to Jan-26 and/or longer horizon.
+Key Context (only what matters)
+Background essentials:
+BB = cohorts with origination month < 202510 (loans originated up to Sep-25); FB = ≥ 202510 not forecasted in BB runoff.
+Forecast horizon originally described as Oct-25 to Jan-29; backtest window seen in files is Oct-25 to Jan-26.
+Forecast outputs include metrics like Opening/Closing GBV, Collections (principal/interest), write-offs, InterestRevenue, provisions, impairment.
+Stakeholders / audiences (if any):
+User (Jack) working on model; “boss” provided guidance that Oct-25 actual provisions were understated by £1.58m due to CR updates/changes.
+Constraints (time, budget, tools, policies, preferences):
+Strong preference for methodology (rules) changes only, not ad hoc month fixes.
+Guardrails: no single-month calibration; MOB windows must reflect regimes; continuity matters; donors justified; validate across multiple months; avoid long-horizon drift.
+Cutoff in use: 2025-10 (last actual month is Sep-25 / 202509).
+Non-goals / out of scope:
+Forecasting Frontbook (originations from Oct-25 onward).
+Month-by-month bespoke calibration rules.
+UNKNOWN whether code changes are allowed; user prefers approach-only changes, but some structural improvements were implemented (ex-contra backtest).
+What’s Been Decided
+Use ex-contra actuals for stock metric comparisons to be like-for-like with forecast bridge (forecast excludes contra).
+Ex-contra backtest basis is correct comparator even if reported closing GBV includes contra + small residual.
+Confirmed: OpeningGBV in Oct-25 matches between forecast and actuals side by segment×cohort.
+Follow regime-based methodology pattern:
+Early MOB (first forecast MOB → ~15): DonorCohort or ScaledDonor (if feasible) for continuity and realistic ramp.
+Mid MOB (16–31): donor/median/avg logic if flatten/dip expected (avoid CohortTrend runaway).
+Late MOB (32+): prefer stabilisers (CohortAvg(6/12) or SegMedian); avoid trend to 999.
+ScaledDonor feasibility constraint: model requires cohort has MOB ≥ 3 (MOB_THRESHOLD=3).
+What’s In Progress
+Workstream / topic: Reduce variances (all segments) in BB forecast vs actuals (ex-contra), focusing first on principal collections variance and then provisions/CR dynamics.
+Status: Active iteration.
+Latest outputs: User attached BB Forecast Outputs v5 (use this one).xlsx and shared totals/variances:
+Oct-25: Interest collections off by ~£145k; Principal collections off by ~£822k; Interest revenue off by ~£400k; Provision balance off by ~£1.19m (but boss says Oct actual provisions should be ~£1.58m higher than data, reducing variance).
+Nov-25: Provision balance variances large; likely driven by both CR and Closing GBV.
+Blockers: UNKNOWN exact tolerance/targets; ambiguity about true Oct-25 provision “corrected” series and whether adjustment applies to other months.
+Important Facts & Data
+Definitions:
+Provision Balance = Coverage Ratio × Closing GBV (on ex-contra GBV series for like-for-like).
+Collections are negative (inflow reduces GBV); write-offs in ex-contra bridge assumed positive magnitudes (user confirmed).
+Model changes implemented (code):
+build_ex_contra_actuals() creates month-by-month GBV roll-forward excluding contra:
+ClosingGBV_ExContra[t] = Opening + InterestRevenue + Coll_Principal + Coll_Interest − WO_DebtSold − WO_Other
+Provision_ExContra = CR_actual × ClosingGBV_ExContra (CR from actuals; applied to ex-contra GBV)
+NBV_ExContra = ClosingGBV_ExContra − Provision_ExContra
+CLI flags:
+--ex-contra uses ex-contra values for stock metrics in 14_Backtest_Comparison (OpeningGBV, ClosingGBV, Total_Provision_Balance), flows remain reported; includes Actuals_Basis indicator.
+--cutoff exists; 15_ExContra_Actuals sheet generated when --cutoff used (regardless of --ex-contra).
+Cutoff implications:
+Cutoff currently 2025-10 (last actual month is 202509).
+Changing cutoff changes last actual MOB per cohort; cohort-specific ScaledDonor rules with Param2=last actual MOB and MOB_Start=last actual+1 should be updated; DonorCohort rules generally don’t need edits but outputs can change due to different estimation window.
+Previously identified structural issues (now mostly addressed by ex-contra):
+Contra settlements were a major driver of Closing GBV variance when comparing to reported GBV; ex-contra comparator removes this mismatch.
+Debt sale schedule incompleteness previously caused DS write-off mismatches; user said assume it will be populated (status UNKNOWN in v5).
+Segmentation (from earlier review):
+Segments include NON PRIME, NRP-S, NRP-M, NRP-L, PRIME.
+NRP size bucketing in code: £0–5k NRP-S; £5–10k NRP-M; £10–15k NRP-M; £15–20k NRP-L.
+Cohorts are clustered in code (e.g., Pre-2020→201912; ranges mapped to 202001/202101/202201/202301; 202404+ monthly). (Exact mapping matters when choosing donors.)
+Boss note: Oct-25 actual provisions were understated by £1.58m lower in data due to CR updates/changes; correct Oct-25 actual provisions should be ~£1.58m higher. Applicability beyond Oct-25 is UNKNOWN.
+Artifacts & References
+Artifact: backbook_forecast.py
+What it is: Python BB forecast engine.
+Where: /mnt/data/backbook_forecast.py
+Why it matters: Implements methodology selection, MOB threshold, ex-contra feature, cutoff behavior, and outputs.
+Artifact: Rate_Methodology.csv
+What it is: Methodology rules driving forecast approaches.
+Where: /mnt/data/Rate_Methodology.csv (user’s current baseline was replaced earlier; latest in use for v5 is Rate_Methodology_vNext_plausible_baseline.csv per user).
+Why it matters: Primary lever for improving forecast while staying “sensible”.
+Artifact: Rate_Methodology_vNext_plausible_baseline.csv
+What it is: Cleaned baseline methodology file created to enforce regime-based structure and avoid long-run drift.
+Where: /mnt/data/Rate_Methodology_vNext_plausible_baseline.csv (created earlier in thread; actual file path in sandbox was /mnt/data/Rate_Methodology_vNext_plausible_baseline.csv).
+Why it matters: Baseline for v5.
+Artifact: BB Forecast Outputs v5 (use this one).xlsx
+What it is: Latest forecast output workbook (all segments) on ex-contra basis with backtest tables.
+Where: /mnt/data/BB Forecast Outputs v5 (use this one).xlsx
+Why it matters: Source of current variances and curve diagnostics.
+Artifact: CLI commands
+What they are: How to run backtest and ex-contra:
+Reported backtest (default): python backbook_forecast.py -f data.xlsx -m methodology.csv -c 2025-10 -t
+Ex-contra backtest: python backbook_forecast.py -f data.xlsx -m methodology.csv -c 2025-10 -t --ex-contra
+Why they matter: Ensures like-for-like basis.
+Artifact: Proposed methodology changes (principal collections focus)
+What: Suggested regime-based rows to reduce principal over-collection:
+NON PRIME ALL Coll_Principal 0–12 donor swap to 202503
+NON PRIME 202509 Coll_Principal 1–9 donor swap to 202503
+NRP-M ALL Coll_Principal 13–36 switch to CohortAvg(12)
+PRIME ALL Coll_Principal 37–999 CohortAvg(12)
+NRP-S ALL Coll_Principal 37–999 CohortAvg(12)
+Where: To be added in Rate_Methodology.csv
+Why: Address systematic principal “over-collection” (forecast too negative), especially visible in Nov-25.
+Open Questions (must answer to proceed)
+Success criteria/tolerances: What variance thresholds are acceptable by metric (collections, IR, provisions) across Oct–Jan and longer horizon?
+Oct-25 provision adjustment: Is the £1.58m correction:
+only for Oct-25?
+applicable to subsequent months?
+does it affect CR actual series or only provision balances?
+Debt sale schedule status in v5: Is Debt_Sale_Schedule.csv now populated for the backtest months? (UNKNOWN.)
+Contra handling in forecast: Are contra settlements still excluded from forecast (yes) and treated only via ex-contra actuals (yes), or will contra be forecasted later? (UNKNOWN future intent.)
+Preferred donor policy: For donor selection, should donors be restricted to:
+same segment only (likely yes),
+recent cohorts only,
+or allow clustered cohorts (202301/202201 etc.)? (UNKNOWN constraints.)
+Recommended Next Actions (step-by-step)
+In BB Forecast Outputs v5 (use this one).xlsx, quantify principal collections variance by month→segment→cohort (Oct–Jan) and confirm it is systematic, not one-off.
+Implement the regime-based principal collections methodology changes (listed in Section 7) in the active methodology CSV, ensuring no duplicate overlapping rows.
+Re-run forecast with cutoff 2025-10 and --ex-contra; compare Oct–Jan principal collections totals and cohort drivers.
+Validate that improvements persist across Nov–Jan and do not create implausible curve shapes (check Coll_Principal rate curves 0–36 and tail stability).
+Only after principal is improved, revisit provisions variance by decomposing CR effect vs GBV effect per segment/cohort using ex-contra stocks.
+Risks / Watch-outs
+Donor/ScaledDonor dependency on cutoff: cohort-specific rules using Param2=last actual MOB must be updated if cutoff changes; ScaledDonor fails if last actual MOB < 3.
+Overlapping rules ambiguity: Multiple rows covering same segment/cohort/metric/MOB ranges can cause unintended precedence outcomes.
+Calendar regime breaks for CR: Oct-25 CR methodology changes create a calendar-based break that MOB-only rules may not capture cleanly; risk of “fitting” with cohort rules that don’t generalize.
+Sign conventions: Collections negative, write-offs positive magnitudes (confirmed). Any mismatch in input sign or aggregation can invert interpretations.
+Cohort clustering: Donor choices must respect that many cohorts are clustered in code; “202301” may represent a cluster, not a single monthly vintage.
+“If you only read one thing”
+Always propose regime-based methodology updates (early/mid/late MOB windows with continuity and tail caps) and validate improvements across multiple months (Oct–Jan) on ex-contra stock comparisons—do not introduce month-specific patches.
