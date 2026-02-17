@@ -3755,6 +3755,69 @@ def generate_comprehensive_transparency_report(
     else:
         curve_comparison = pd.DataFrame()
 
+    # If backtest actuals are available, add post-cutoff actual rate overlays by MOB
+    # so users can compare forecast-applied rates vs observed post-cutoff actual rates
+    # on the same MOB axis.
+    if len(curve_comparison) > 0 and backtest is not None and len(backtest) > 0:
+        bt = backtest.copy()
+        bt = bt[bt['Metric'].isin(['OpeningGBV'] + flow_metrics)].copy()
+
+        if len(bt) > 0:
+            bt_pivot = bt.pivot_table(
+                index=['Segment', 'Cohort', 'Month'],
+                columns='Metric',
+                values='Actual',
+                aggfunc='first'
+            ).reset_index()
+
+            bt_rate_rows = []
+            for metric in flow_metrics:
+                if metric not in bt_pivot.columns or 'OpeningGBV' not in bt_pivot.columns:
+                    continue
+
+                temp = bt_pivot[['Segment', 'Cohort', 'Month', 'OpeningGBV', metric]].copy()
+                temp['Actual_Backtest_Rate'] = temp.apply(
+                    lambda r: safe_divide(r[metric], r['OpeningGBV']), axis=1
+                )
+
+                # Convert backtest month to MOB for side-by-side curve comparison
+                # MOB = months_between(cohort_yyyymm, month_yyyymm) + 1
+                month_ts = pd.to_datetime(temp['Month'])
+                cohort_int = temp['Cohort'].astype(int)
+                cohort_year = (cohort_int // 100).astype(int)
+                cohort_month = (cohort_int % 100).astype(int)
+                temp['MOB'] = (
+                    (month_ts.dt.year - cohort_year) * 12 +
+                    (month_ts.dt.month - cohort_month) + 1
+                )
+
+                temp['Metric'] = metric
+                temp['Backtest_Month'] = month_ts
+                bt_rate_rows.append(
+                    temp[['Segment', 'Cohort', 'Metric', 'MOB', 'Backtest_Month', 'Actual_Backtest_Rate']]
+                )
+
+            if bt_rate_rows:
+                bt_rates = pd.concat(bt_rate_rows, ignore_index=True)
+                curve_comparison = curve_comparison.merge(
+                    bt_rates,
+                    on=['Segment', 'Cohort', 'Metric', 'MOB'],
+                    how='left'
+                )
+
+                curve_comparison['Rate_Delta_Forecast_minus_BacktestActual'] = (
+                    curve_comparison['Forecast_Applied_Rate'] - curve_comparison['Actual_Backtest_Rate']
+                )
+
+                # Keep the historical-delta column as-is and include new backtest columns
+                curve_comparison = curve_comparison[
+                    ['Segment', 'Cohort', 'Metric', 'MOB',
+                     'Actual_Historical_Rate', 'Forecast_Applied_Rate',
+                     'Rate_Delta_Forecast_minus_Actual',
+                     'Actual_Backtest_Rate', 'Rate_Delta_Forecast_minus_BacktestActual',
+                     'Backtest_Month', 'Forecast_Approach']
+                ]
+
     # ==========================================================================
     # Prepare Seasonal Factors
     # ==========================================================================
@@ -3834,8 +3897,8 @@ def generate_comprehensive_transparency_report(
             use_for.append('Like-for-like comparison basis vs forecast (which also excludes contra). Includes contra effect sanity check.')
         if len(curve_comparison) > 0:
             sheet_names.append('16_Curve_Comparison')
-            descriptions.append('Side-by-side historical actual rates vs forecast-applied rates by Segment x Cohort x MOB for key flow metrics')
-            use_for.append('Curve QC: compare historical level/shape to forecasted curve shape by cohort')
+            descriptions.append('Side-by-side historical actual rates and (where available) post-cutoff backtest actual rates vs forecast-applied rates by Segment x Cohort x MOB for key flow metrics')
+            use_for.append('Curve QC: compare historical and post-cutoff observed levels/shapes to forecasted curve shape by cohort')
         readme_data = {
             'Sheet Name': sheet_names,
             'Description': descriptions,
