@@ -3737,11 +3737,13 @@ def generate_comprehensive_transparency_report(
         else:
             forecast_slice['Forecast_Approach'] = ''
 
+        # Anchor on forecast rows so each output row is a forecast cohort/MOB/month point.
+        # Historical actual is joined by MOB for shape comparison.
         merged = pd.merge(
-            actual_slice,
             forecast_slice,
+            actual_slice,
             on=['Segment', 'Cohort', 'MOB'],
-            how='outer'
+            how='left'
         )
         merged['Metric'] = metric
         merged['Rate_Delta_Forecast_minus_Actual'] = (
@@ -3807,14 +3809,18 @@ def generate_comprehensive_transparency_report(
 
             if bt_rate_rows:
                 bt_rates = pd.concat(bt_rate_rows, ignore_index=True)
+                bt_rates.rename(columns={'MOB': 'Backtest_MOB', 'Backtest_Month': 'Forecast_Month'}, inplace=True)
                 curve_comparison = curve_comparison.merge(
                     bt_rates,
-                    on=['Segment', 'Cohort', 'Metric', 'MOB'],
+                    on=['Segment', 'Cohort', 'Metric', 'Forecast_Month'],
                     how='left'
                 )
 
                 curve_comparison['Rate_Delta_Forecast_minus_BacktestActual'] = (
                     curve_comparison['Forecast_Applied_Rate'] - curve_comparison['Actual_Backtest_Rate']
+                )
+                curve_comparison['MOB_Alignment_Diff'] = (
+                    curve_comparison['MOB'] - curve_comparison['Backtest_MOB']
                 )
 
                 # Keep the historical-delta column as-is and include new backtest columns
@@ -3823,7 +3829,8 @@ def generate_comprehensive_transparency_report(
                      'Actual_Historical_Rate', 'Forecast_Applied_Rate',
                      'Rate_Delta_Forecast_minus_Actual',
                      'Actual_Backtest_Rate', 'Rate_Delta_Forecast_minus_BacktestActual',
-                     'Backtest_Month', 'Forecast_Month', 'Forecast_Approach']
+                     'Backtest_MOB', 'MOB_Alignment_Diff',
+                     'Forecast_Month', 'Forecast_Approach']
                 ]
 
     # Monthly-aligned comparison (one row per Segment x Cohort x Metric x Month)
