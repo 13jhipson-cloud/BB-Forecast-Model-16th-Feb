@@ -1,0 +1,6 @@
+Segment,ForecastMonth_Start,ForecastMonth_End,Metric,Type,Value,Explanation
+NON PRIME,2025-10-01,,Coll_Principal,Multiply,0.904743,Calibrated from 2025-10..2026-01 backtest Actual/Forecast ratio
+NRP-L,2025-10-01,,Coll_Principal,Multiply,0.990712,Calibrated from 2025-10..2026-01 backtest Actual/Forecast ratio
+NRP-M,2025-10-01,,Coll_Principal,Multiply,0.960153,Calibrated from 2025-10..2026-01 backtest Actual/Forecast ratio
+NRP-S,2025-10-01,,Coll_Principal,Multiply,0.906350,Calibrated from 2025-10..2026-01 backtest Actual/Forecast ratio
+PRIME,2025-10-01,,Coll_Principal,Multiply,0.732677,Calibrated from 2025-10..2026-01 backtest Actual/Forecast ratio

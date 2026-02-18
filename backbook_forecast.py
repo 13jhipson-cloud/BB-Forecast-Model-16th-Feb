@@ -81,7 +81,8 @@ class Config:
     # Valid rate calculation approaches
     VALID_APPROACHES: List[str] = [
         'CohortAvg', 'CohortTrend', 'DonorCohort', 'ScaledDonor',
-        'SegMedian', 'Manual', 'Zero', 'ScaledCohortAvg'
+        'SegMedian', 'Manual', 'Zero', 'ScaledCohortAvg',
+        'StaticCohortAvg'
     ]
 
     # Seasonality configuration
@@ -1555,6 +1556,71 @@ def fn_cohort_avg(curves_df: pd.DataFrame, segment: str, cohort: str,
     return float(rate)
 
 
+def fn_static_cohort_avg(curves_df: pd.DataFrame, segment: str, cohort: str,
+                         mob: int, metric_col: str, lookback: int = 6,
+                         exclude_zeros: bool = False) -> Optional[float]:
+    """
+    Calculate average rate from historical ACTUAL curve points only.
+
+    Unlike fn_cohort_avg (which can include previously forecasted values in
+    rolling mode), this function excludes rows marked as forecast-generated
+    (`__is_forecast` == True). This helps prevent forecast compounding drift.
+
+    Args:
+        curves_df: Curves DataFrame (may include forecast-augmented rows)
+        segment: Target segment
+        cohort: Target cohort
+        mob: Target MOB (the MOB being forecast)
+        metric_col: Column name for metric rate
+        lookback: Number of periods to look back
+        exclude_zeros: If True, only average non-zero rates
+
+    Returns:
+        float or None: Average rate
+    """
+    cohort_str = clean_cohort(cohort)
+
+    if mob <= Config.MOB_THRESHOLD + 1:
+        min_mob_filter = 1
+    else:
+        min_mob_filter = Config.MOB_THRESHOLD
+
+    mask = (
+        (curves_df['Segment'] == segment) &
+        (curves_df['Cohort'] == cohort_str) &
+        (curves_df['MOB'] >= min_mob_filter) &
+        (curves_df['MOB'] < mob)
+    )
+
+    # Exclude forecast-generated rows when marker is available
+    if '__is_forecast' in curves_df.columns:
+        mask = mask & (curves_df['__is_forecast'] != True)
+
+    data = curves_df[mask].sort_values('MOB', ascending=False)
+
+    min_data_points = 1 if mob <= Config.MOB_THRESHOLD + 1 else 2
+    if len(data) < min_data_points:
+        return None
+
+    if metric_col not in data.columns:
+        return None
+
+    if exclude_zeros:
+        non_zero_data = data[data[metric_col] > 0]
+        if len(non_zero_data) == 0:
+            return None
+        non_zero_data = non_zero_data.head(lookback)
+        rate = non_zero_data[metric_col].mean()
+    else:
+        data = data.head(lookback)
+        rate = data[metric_col].mean()
+
+    if pd.isna(rate):
+        return None
+
+    return float(rate)
+
+
 def fn_cohort_trend(curves_df: pd.DataFrame, segment: str, cohort: str,
                     mob: int, metric_col: str) -> Optional[float]:
     """
@@ -2034,6 +2100,22 @@ def apply_approach(curves_df: pd.DataFrame, segment: str, cohort: str,
         else:
             return {'Rate': 0.0, 'ApproachTag': 'ScaledCohortAvg_NoData_ERROR'}
 
+    elif approach == 'StaticCohortAvg':
+        # StaticCohortAvg: Cohort average using historical ACTUAL rates only
+        # Param1 = lookback periods (default LOOKBACK_PERIODS)
+        try:
+            lookback = int(float(param1)) if param1 and param1 != 'None' else Config.LOOKBACK_PERIODS
+        except (ValueError, TypeError):
+            lookback = Config.LOOKBACK_PERIODS
+
+        exclude_zeros = metric in ['WO_DebtSold', 'Debt_Sale_Coverage_Ratio', 'Debt_Sale_Proceeds_Rate']
+        rate = fn_static_cohort_avg(curves_df, segment, cohort, mob, metric_col, lookback, exclude_zeros)
+
+        if rate is not None:
+            return {'Rate': rate, 'ApproachTag': f'StaticCohortAvg({lookback})'}
+        else:
+            return {'Rate': 0.0, 'ApproachTag': 'StaticCohortAvg_NoData_ERROR'}
+
     else:
         return {'Rate': 0.0, 'ApproachTag': f'UnknownApproach_ERROR:{approach}'}
 
@@ -2098,6 +2180,8 @@ def build_rate_lookup(seed: pd.DataFrame, curves: pd.DataFrame,
 
     # Create a working copy of curves that we'll update with forecasted rates
     working_curves = curves.copy()
+    if '__is_forecast' not in working_curves.columns:
+        working_curves['__is_forecast'] = False
 
     lookups = []
 
@@ -2145,6 +2229,7 @@ def build_rate_lookup(seed: pd.DataFrame, curves: pd.DataFrame,
                 'Segment': segment,
                 'Cohort': cohort,
                 'MOB': mob,
+                '__is_forecast': True,
                 **forecast_rates
             })
 
@@ -3620,6 +3705,215 @@ def generate_comprehensive_transparency_report(
     combined_df = combined_df.sort_values(['Segment', 'Cohort', 'Month']).reset_index(drop=True)
 
     # ==========================================================================
+    # Prepare Curve Comparison (actual historical rates vs forecast-applied rates)
+    # ==========================================================================
+    flow_metrics = ['Coll_Principal', 'Coll_Interest', 'InterestRevenue']
+    curve_rows = []
+
+    for metric in flow_metrics:
+        rate_col = f'{metric}_Rate'
+        approach_col = f'{metric}_Approach'
+
+        if rate_col not in historical_curves.columns:
+            continue
+
+        actual_slice = historical_curves[['Segment', 'Cohort', 'MOB', rate_col]].copy()
+        actual_slice.rename(columns={rate_col: 'Actual_Historical_Rate'}, inplace=True)
+
+        # Use forecast output (not rate_lookup) so the comparison carries
+        # the actual forecast calendar month for each cohort/MOB point.
+        if rate_col not in forecast.columns:
+            continue
+
+        forecast_cols = ['Segment', 'Cohort', 'MOB', 'ForecastMonth', rate_col]
+        if approach_col in forecast.columns:
+            forecast_cols.append(approach_col)
+
+        forecast_slice = forecast[forecast_cols].copy()
+        forecast_slice.rename(columns={rate_col: 'Forecast_Applied_Rate'}, inplace=True)
+        forecast_slice.rename(columns={'ForecastMonth': 'Forecast_Month'}, inplace=True)
+        if approach_col in forecast_slice.columns:
+            forecast_slice.rename(columns={approach_col: 'Forecast_Approach'}, inplace=True)
+        else:
+            forecast_slice['Forecast_Approach'] = ''
+
+        # Anchor on forecast rows so each output row is a forecast cohort/MOB/month point.
+        # Historical actual is joined by MOB for shape comparison.
+        merged = pd.merge(
+            forecast_slice,
+            actual_slice,
+            on=['Segment', 'Cohort', 'MOB'],
+            how='left'
+        )
+        merged['Metric'] = metric
+        merged['Rate_Delta_Forecast_minus_Actual'] = (
+            merged['Forecast_Applied_Rate'] - merged['Actual_Historical_Rate']
+        )
+        curve_rows.append(merged)
+
+    if curve_rows:
+        curve_comparison = pd.concat(curve_rows, ignore_index=True)
+        curve_comparison = curve_comparison[
+            ['Segment', 'Cohort', 'Metric', 'MOB',
+             'Actual_Historical_Rate', 'Forecast_Applied_Rate',
+             'Rate_Delta_Forecast_minus_Actual',
+             'Forecast_Month', 'Forecast_Approach']
+        ]
+        curve_comparison = curve_comparison.sort_values(
+            ['Segment', 'Cohort', 'Metric', 'MOB']
+        ).reset_index(drop=True)
+    else:
+        curve_comparison = pd.DataFrame()
+
+    # If backtest actuals are available, add post-cutoff actual rate overlays by MOB
+    # so users can compare forecast-applied rates vs observed post-cutoff actual rates
+    # on the same MOB axis.
+    if len(curve_comparison) > 0 and backtest is not None and len(backtest) > 0:
+        bt = backtest.copy()
+        bt = bt[bt['Metric'].isin(['OpeningGBV'] + flow_metrics)].copy()
+
+        if len(bt) > 0:
+            bt_pivot = bt.pivot_table(
+                index=['Segment', 'Cohort', 'Month'],
+                columns='Metric',
+                values='Actual',
+                aggfunc='first'
+            ).reset_index()
+
+            bt_rate_rows = []
+            for metric in flow_metrics:
+                if metric not in bt_pivot.columns or 'OpeningGBV' not in bt_pivot.columns:
+                    continue
+
+                temp = bt_pivot[['Segment', 'Cohort', 'Month', 'OpeningGBV', metric]].copy()
+                temp['Actual_Backtest_Rate'] = temp.apply(
+                    lambda r: safe_divide(r[metric], r['OpeningGBV']), axis=1
+                )
+
+                # Convert backtest month to MOB for side-by-side curve comparison
+                # MOB = months_between(cohort_yyyymm, month_yyyymm)
+                month_ts = pd.to_datetime(temp['Month'])
+                cohort_int = temp['Cohort'].astype(int)
+                cohort_year = (cohort_int // 100).astype(int)
+                cohort_month = (cohort_int % 100).astype(int)
+                temp['MOB'] = (
+                    (month_ts.dt.year - cohort_year) * 12 +
+                    (month_ts.dt.month - cohort_month)
+                )
+
+                temp['Metric'] = metric
+                temp['Backtest_Month'] = month_ts
+                bt_rate_rows.append(
+                    temp[['Segment', 'Cohort', 'Metric', 'MOB', 'Backtest_Month', 'Actual_Backtest_Rate']]
+                )
+
+            if bt_rate_rows:
+                bt_rates = pd.concat(bt_rate_rows, ignore_index=True)
+                bt_rates.rename(columns={'MOB': 'Backtest_MOB', 'Backtest_Month': 'Forecast_Month'}, inplace=True)
+                curve_comparison = curve_comparison.merge(
+                    bt_rates,
+                    on=['Segment', 'Cohort', 'Metric', 'Forecast_Month'],
+                    how='left'
+                )
+
+                curve_comparison['Rate_Delta_Forecast_minus_BacktestActual'] = (
+                    curve_comparison['Forecast_Applied_Rate'] - curve_comparison['Actual_Backtest_Rate']
+                )
+                curve_comparison['MOB_Alignment_Diff'] = (
+                    curve_comparison['MOB'] - curve_comparison['Backtest_MOB']
+                )
+
+                # Keep the historical-delta column as-is and include new backtest columns
+                curve_comparison = curve_comparison[
+                    ['Segment', 'Cohort', 'Metric', 'MOB',
+                     'Actual_Historical_Rate', 'Forecast_Applied_Rate',
+                     'Rate_Delta_Forecast_minus_Actual',
+                     'Actual_Backtest_Rate', 'Rate_Delta_Forecast_minus_BacktestActual',
+                     'Backtest_MOB', 'MOB_Alignment_Diff',
+                     'Forecast_Month', 'Forecast_Approach']
+                ]
+
+    # Monthly-aligned comparison (one row per Segment x Cohort x Metric x Month)
+    # to make pivots/charts easier and avoid MOB-only alignment confusion.
+    curve_comparison_monthly = pd.DataFrame()
+    if backtest is not None and len(backtest) > 0:
+        monthly_rows = []
+        for metric in flow_metrics:
+            rate_col = f'{metric}_Rate'
+            approach_col = f'{metric}_Approach'
+
+            if rate_col not in forecast.columns:
+                continue
+
+            fc_cols = ['Segment', 'Cohort', 'MOB', 'ForecastMonth', rate_col]
+            if approach_col in forecast.columns:
+                fc_cols.append(approach_col)
+
+            fc = forecast[fc_cols].copy()
+            fc.rename(columns={
+                'ForecastMonth': 'Month',
+                'MOB': 'Forecast_MOB',
+                rate_col: 'Forecast_Applied_Rate',
+            }, inplace=True)
+            if approach_col in fc.columns:
+                fc.rename(columns={approach_col: 'Forecast_Approach'}, inplace=True)
+            else:
+                fc['Forecast_Approach'] = ''
+
+            bt = backtest[backtest['Metric'].isin(['OpeningGBV', metric])].copy()
+            bt_pivot = bt.pivot_table(
+                index=['Segment', 'Cohort', 'Month'],
+                columns='Metric',
+                values='Actual',
+                aggfunc='first'
+            ).reset_index()
+            if 'OpeningGBV' not in bt_pivot.columns or metric not in bt_pivot.columns:
+                continue
+
+            bt_pivot['Actual_Backtest_Rate'] = bt_pivot.apply(
+                lambda r: safe_divide(r[metric], r['OpeningGBV']), axis=1
+            )
+            bt_pivot['Metric'] = metric
+            bt_pivot['Month'] = pd.to_datetime(bt_pivot['Month'])
+
+            # Backtest MOB from cohort + month
+            cohort_int = bt_pivot['Cohort'].astype(int)
+            cohort_year = (cohort_int // 100).astype(int)
+            cohort_month = (cohort_int % 100).astype(int)
+            bt_pivot['Backtest_MOB'] = (
+                (bt_pivot['Month'].dt.year - cohort_year) * 12 +
+                (bt_pivot['Month'].dt.month - cohort_month)
+            )
+
+            bt_rates = bt_pivot[['Segment', 'Cohort', 'Month', 'Metric', 'Actual_Backtest_Rate', 'Backtest_MOB']]
+
+            merged_monthly = fc.merge(
+                bt_rates,
+                on=['Segment', 'Cohort', 'Month'],
+                how='left'
+            )
+            merged_monthly['Metric'] = metric
+            merged_monthly['Rate_Delta_Forecast_minus_BacktestActual'] = (
+                merged_monthly['Forecast_Applied_Rate'] - merged_monthly['Actual_Backtest_Rate']
+            )
+
+            monthly_rows.append(
+                merged_monthly[
+                    ['Segment', 'Cohort', 'Metric', 'Month',
+                     'Forecast_MOB', 'Backtest_MOB',
+                     'Forecast_Applied_Rate', 'Actual_Backtest_Rate',
+                     'Rate_Delta_Forecast_minus_BacktestActual',
+                     'Forecast_Approach']
+                ]
+            )
+
+        if monthly_rows:
+            curve_comparison_monthly = pd.concat(monthly_rows, ignore_index=True)
+            curve_comparison_monthly = curve_comparison_monthly.sort_values(
+                ['Segment', 'Cohort', 'Metric', 'Month']
+            ).reset_index(drop=True)
+
+    # ==========================================================================
     # Prepare Seasonal Factors
     # ==========================================================================
     seasonal_factors_df = pd.DataFrame()
@@ -3696,6 +3990,14 @@ def generate_comprehensive_transparency_report(
             sheet_names.append('15_ExContra_Actuals')
             descriptions.append('Ex-contra actuals roll-forward: GBV series excluding contra settlements, with derived provision and NBV')
             use_for.append('Like-for-like comparison basis vs forecast (which also excludes contra). Includes contra effect sanity check.')
+        if len(curve_comparison) > 0:
+            sheet_names.append('16_Curve_Comparison')
+            descriptions.append('Side-by-side historical actual rates and (where available) post-cutoff backtest actual rates vs forecast-applied rates by Segment x Cohort x MOB for key flow metrics')
+            use_for.append('Curve QC: compare historical and post-cutoff observed levels/shapes to forecasted curve shape by cohort')
+        if len(curve_comparison_monthly) > 0:
+            sheet_names.append('17_Curve_Comparison_Monthly')
+            descriptions.append('Month-aligned forecast vs backtest actual rates by Segment x Cohort x Metric, with MOB fields for both sides')
+            use_for.append('Pivot/chart-ready month-by-month comparison without MOB-only row mismatches')
         readme_data = {
             'Sheet Name': sheet_names,
             'Description': descriptions,
@@ -3729,6 +4031,12 @@ def generate_comprehensive_transparency_report(
         if ex_contra_actuals is not None and len(ex_contra_actuals) > 0:
             ex_contra_actuals.to_excel(writer, sheet_name='15_ExContra_Actuals', index=False)
 
+        if len(curve_comparison) > 0:
+            curve_comparison.to_excel(writer, sheet_name='16_Curve_Comparison', index=False)
+
+        if len(curve_comparison_monthly) > 0:
+            curve_comparison_monthly.to_excel(writer, sheet_name='17_Curve_Comparison_Monthly', index=False)
+
     logger.info(f"Comprehensive report saved to: {output_path}")
 
     print("\n" + "=" * 70)
@@ -3756,6 +4064,10 @@ def generate_comprehensive_transparency_report(
         print("    - 14_Backtest_Comparison: Forecast vs actuals by Segment x Cohort x Month")
     if ex_contra_actuals is not None and len(ex_contra_actuals) > 0:
         print("    - 15_ExContra_Actuals: Ex-contra actuals roll-forward (GBV, provision, NBV)")
+    if len(curve_comparison) > 0:
+        print("    - 16_Curve_Comparison: Actual historical rates vs forecast-applied rates by cohort/MOB")
+    if len(curve_comparison_monthly) > 0:
+        print("    - 17_Curve_Comparison_Monthly: Forecast vs backtest actual rates aligned by month")
 
     return output_path
 

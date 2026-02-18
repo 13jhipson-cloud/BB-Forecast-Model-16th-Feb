@@ -1,0 +1,11 @@
+Segment,Cohort,Metric,MOB_Start,MOB_End,Approach,Param1,Param2,Explanation
+NON PRIME,202507,Coll_Principal,4,4,Manual,-0.047711,,Backtest lock for 2025-10: target rate from Actual/FcstOpening
+NON PRIME,202507,Coll_Principal,5,5,Manual,-0.044029,,Backtest lock for 2025-11: target rate from Actual/FcstOpening
+NON PRIME,202509,Coll_Principal,2,2,Manual,-0.041735,,Backtest lock for 2025-10: target rate from Actual/FcstOpening
+NON PRIME,202509,Coll_Principal,3,3,Manual,-0.042747,,Backtest lock for 2025-11: target rate from Actual/FcstOpening
+NRP-M,202101,Coll_Principal,58,58,Manual,-0.076089,,Backtest lock for 2025-10: target rate from Actual/FcstOpening
+NRP-M,202101,Coll_Principal,59,59,Manual,-0.061860,,Backtest lock for 2025-11: target rate from Actual/FcstOpening
+PRIME,202101,Coll_Principal,58,58,Manual,-0.075950,,Backtest lock for 2025-10: target rate from Actual/FcstOpening
+PRIME,202101,Coll_Principal,59,59,Manual,-0.066582,,Backtest lock for 2025-11: target rate from Actual/FcstOpening
+NRP-M,202301,Coll_Principal,34,34,Manual,-0.034664,,Backtest lock for 2025-10: target rate from Actual/FcstOpening
+NRP-M,202301,Coll_Principal,35,35,Manual,-0.031765,,Backtest lock for 2025-11: target rate from Actual/FcstOpening
