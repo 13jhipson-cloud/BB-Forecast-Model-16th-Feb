@@ -3714,17 +3714,24 @@ def generate_comprehensive_transparency_report(
         rate_col = f'{metric}_Rate'
         approach_col = f'{metric}_Approach'
 
-        if rate_col not in historical_curves.columns or rate_col not in rate_lookup.columns:
+        if rate_col not in historical_curves.columns:
             continue
 
         actual_slice = historical_curves[['Segment', 'Cohort', 'MOB', rate_col]].copy()
         actual_slice.rename(columns={rate_col: 'Actual_Historical_Rate'}, inplace=True)
 
-        forecast_cols = ['Segment', 'Cohort', 'MOB', rate_col]
-        if approach_col in rate_lookup.columns:
+        # Use forecast output (not rate_lookup) so the comparison carries
+        # the actual forecast calendar month for each cohort/MOB point.
+        if rate_col not in forecast.columns:
+            continue
+
+        forecast_cols = ['Segment', 'Cohort', 'MOB', 'ForecastMonth', rate_col]
+        if approach_col in forecast.columns:
             forecast_cols.append(approach_col)
-        forecast_slice = rate_lookup[forecast_cols].copy()
+
+        forecast_slice = forecast[forecast_cols].copy()
         forecast_slice.rename(columns={rate_col: 'Forecast_Applied_Rate'}, inplace=True)
+        forecast_slice.rename(columns={'ForecastMonth': 'Forecast_Month'}, inplace=True)
         if approach_col in forecast_slice.columns:
             forecast_slice.rename(columns={approach_col: 'Forecast_Approach'}, inplace=True)
         else:
@@ -3747,7 +3754,8 @@ def generate_comprehensive_transparency_report(
         curve_comparison = curve_comparison[
             ['Segment', 'Cohort', 'Metric', 'MOB',
              'Actual_Historical_Rate', 'Forecast_Applied_Rate',
-             'Rate_Delta_Forecast_minus_Actual', 'Forecast_Approach']
+             'Rate_Delta_Forecast_minus_Actual',
+             'Forecast_Month', 'Forecast_Approach']
         ]
         curve_comparison = curve_comparison.sort_values(
             ['Segment', 'Cohort', 'Metric', 'MOB']
@@ -3815,7 +3823,7 @@ def generate_comprehensive_transparency_report(
                      'Actual_Historical_Rate', 'Forecast_Applied_Rate',
                      'Rate_Delta_Forecast_minus_Actual',
                      'Actual_Backtest_Rate', 'Rate_Delta_Forecast_minus_BacktestActual',
-                     'Backtest_Month', 'Forecast_Approach']
+                     'Backtest_Month', 'Forecast_Month', 'Forecast_Approach']
                 ]
 
     # ==========================================================================
