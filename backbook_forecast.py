@@ -3826,6 +3826,86 @@ def generate_comprehensive_transparency_report(
                      'Backtest_Month', 'Forecast_Month', 'Forecast_Approach']
                 ]
 
+    # Monthly-aligned comparison (one row per Segment x Cohort x Metric x Month)
+    # to make pivots/charts easier and avoid MOB-only alignment confusion.
+    curve_comparison_monthly = pd.DataFrame()
+    if backtest is not None and len(backtest) > 0:
+        monthly_rows = []
+        for metric in flow_metrics:
+            rate_col = f'{metric}_Rate'
+            approach_col = f'{metric}_Approach'
+
+            if rate_col not in forecast.columns:
+                continue
+
+            fc_cols = ['Segment', 'Cohort', 'MOB', 'ForecastMonth', rate_col]
+            if approach_col in forecast.columns:
+                fc_cols.append(approach_col)
+
+            fc = forecast[fc_cols].copy()
+            fc.rename(columns={
+                'ForecastMonth': 'Month',
+                'MOB': 'Forecast_MOB',
+                rate_col: 'Forecast_Applied_Rate',
+            }, inplace=True)
+            if approach_col in fc.columns:
+                fc.rename(columns={approach_col: 'Forecast_Approach'}, inplace=True)
+            else:
+                fc['Forecast_Approach'] = ''
+
+            bt = backtest[backtest['Metric'].isin(['OpeningGBV', metric])].copy()
+            bt_pivot = bt.pivot_table(
+                index=['Segment', 'Cohort', 'Month'],
+                columns='Metric',
+                values='Actual',
+                aggfunc='first'
+            ).reset_index()
+            if 'OpeningGBV' not in bt_pivot.columns or metric not in bt_pivot.columns:
+                continue
+
+            bt_pivot['Actual_Backtest_Rate'] = bt_pivot.apply(
+                lambda r: safe_divide(r[metric], r['OpeningGBV']), axis=1
+            )
+            bt_pivot['Metric'] = metric
+            bt_pivot['Month'] = pd.to_datetime(bt_pivot['Month'])
+
+            # Backtest MOB from cohort + month
+            cohort_int = bt_pivot['Cohort'].astype(int)
+            cohort_year = (cohort_int // 100).astype(int)
+            cohort_month = (cohort_int % 100).astype(int)
+            bt_pivot['Backtest_MOB'] = (
+                (bt_pivot['Month'].dt.year - cohort_year) * 12 +
+                (bt_pivot['Month'].dt.month - cohort_month) + 1
+            )
+
+            bt_rates = bt_pivot[['Segment', 'Cohort', 'Month', 'Metric', 'Actual_Backtest_Rate', 'Backtest_MOB']]
+
+            merged_monthly = fc.merge(
+                bt_rates,
+                on=['Segment', 'Cohort', 'Month'],
+                how='left'
+            )
+            merged_monthly['Metric'] = metric
+            merged_monthly['Rate_Delta_Forecast_minus_BacktestActual'] = (
+                merged_monthly['Forecast_Applied_Rate'] - merged_monthly['Actual_Backtest_Rate']
+            )
+
+            monthly_rows.append(
+                merged_monthly[
+                    ['Segment', 'Cohort', 'Metric', 'Month',
+                     'Forecast_MOB', 'Backtest_MOB',
+                     'Forecast_Applied_Rate', 'Actual_Backtest_Rate',
+                     'Rate_Delta_Forecast_minus_BacktestActual',
+                     'Forecast_Approach']
+                ]
+            )
+
+        if monthly_rows:
+            curve_comparison_monthly = pd.concat(monthly_rows, ignore_index=True)
+            curve_comparison_monthly = curve_comparison_monthly.sort_values(
+                ['Segment', 'Cohort', 'Metric', 'Month']
+            ).reset_index(drop=True)
+
     # ==========================================================================
     # Prepare Seasonal Factors
     # ==========================================================================
@@ -3907,6 +3987,10 @@ def generate_comprehensive_transparency_report(
             sheet_names.append('16_Curve_Comparison')
             descriptions.append('Side-by-side historical actual rates and (where available) post-cutoff backtest actual rates vs forecast-applied rates by Segment x Cohort x MOB for key flow metrics')
             use_for.append('Curve QC: compare historical and post-cutoff observed levels/shapes to forecasted curve shape by cohort')
+        if len(curve_comparison_monthly) > 0:
+            sheet_names.append('17_Curve_Comparison_Monthly')
+            descriptions.append('Month-aligned forecast vs backtest actual rates by Segment x Cohort x Metric, with MOB fields for both sides')
+            use_for.append('Pivot/chart-ready month-by-month comparison without MOB-only row mismatches')
         readme_data = {
             'Sheet Name': sheet_names,
             'Description': descriptions,
@@ -3943,6 +4027,9 @@ def generate_comprehensive_transparency_report(
         if len(curve_comparison) > 0:
             curve_comparison.to_excel(writer, sheet_name='16_Curve_Comparison', index=False)
 
+        if len(curve_comparison_monthly) > 0:
+            curve_comparison_monthly.to_excel(writer, sheet_name='17_Curve_Comparison_Monthly', index=False)
+
     logger.info(f"Comprehensive report saved to: {output_path}")
 
     print("\n" + "=" * 70)
@@ -3972,6 +4059,8 @@ def generate_comprehensive_transparency_report(
         print("    - 15_ExContra_Actuals: Ex-contra actuals roll-forward (GBV, provision, NBV)")
     if len(curve_comparison) > 0:
         print("    - 16_Curve_Comparison: Actual historical rates vs forecast-applied rates by cohort/MOB")
+    if len(curve_comparison_monthly) > 0:
+        print("    - 17_Curve_Comparison_Monthly: Forecast vs backtest actual rates aligned by month")
 
     return output_path
 
