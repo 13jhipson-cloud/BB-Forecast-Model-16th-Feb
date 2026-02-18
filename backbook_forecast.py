@@ -3789,14 +3789,14 @@ def generate_comprehensive_transparency_report(
                 )
 
                 # Convert backtest month to MOB for side-by-side curve comparison
-                # MOB = months_between(cohort_yyyymm, month_yyyymm) + 1
+                # MOB = months_between(cohort_yyyymm, month_yyyymm)
                 month_ts = pd.to_datetime(temp['Month'])
                 cohort_int = temp['Cohort'].astype(int)
                 cohort_year = (cohort_int // 100).astype(int)
                 cohort_month = (cohort_int % 100).astype(int)
                 temp['MOB'] = (
                     (month_ts.dt.year - cohort_year) * 12 +
-                    (month_ts.dt.month - cohort_month) + 1
+                    (month_ts.dt.month - cohort_month)
                 )
 
                 temp['Metric'] = metric
@@ -3875,7 +3875,7 @@ def generate_comprehensive_transparency_report(
             cohort_month = (cohort_int % 100).astype(int)
             bt_pivot['Backtest_MOB'] = (
                 (bt_pivot['Month'].dt.year - cohort_year) * 12 +
-                (bt_pivot['Month'].dt.month - cohort_month) + 1
+                (bt_pivot['Month'].dt.month - cohort_month)
             )
 
             bt_rates = bt_pivot[['Segment', 'Cohort', 'Month', 'Metric', 'Actual_Backtest_Rate', 'Backtest_MOB']]
